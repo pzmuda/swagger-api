@@ -41,13 +41,11 @@ const PostUser = () => {
         onclick={handleShowBtn}
       />
 
-      {placeHolderObject && (
+      {!btn && (
         <>
-          {!btn && (
             <div>
               <Button text='Execute' onclick={handleClickPOST} />
             </div>
-          )}
           <textarea
             disabled={btn}
             rows={7}
