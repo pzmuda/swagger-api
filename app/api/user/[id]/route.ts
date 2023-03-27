@@ -10,7 +10,7 @@ export async function PUT(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  const user: User = await request.json();
+  const user = await request.json();
 
   return NextResponse.json({ user });
 }

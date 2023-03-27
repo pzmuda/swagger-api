@@ -1,80 +1,27 @@
-import { useState } from "react";
-import Button from "../../atoms/Button/Button";
-import Text from "../../atoms/Text/Text";
-import TextWithBackground from "../../atoms/TextWithBackground/TextWithBackground";
-import Bar from "../Bar/Bar";
+import DeleteUser from '../DeleteUser/DeleteUser';
+import GetUser from '../GetUser/GetUser';
+import PostUser from '../PostUser/PostUser';
+import PutUser from '../PutUser/PutUser';
 
 type props = {
-  buttonText?: boolean;
-  showResponse?: boolean;
-  content?: string;
-  responseHead?: string;
-  handleShowText?: any;
-  onSubmit?: any;
-  exampleValue?: string;
-  id?: number;
-  name?: string;
+  tag:String
 };
 
+const AccordionContent = ({ tag }: props) => {
 
-const AccordionContent = ({
-  buttonText,
-  showResponse,
-  responseHead,
-  content,
-  onSubmit,
-  handleShowText,
-  exampleValue,
-}: props) => {
-  const [textArea, setTextArea] = useState(exampleValue);
-
-
-  return (
-    <div>
-      <Bar
-        text='Parameters'
-        buttonText={buttonText ? 'Try it Out' : 'Cancel'}
-        onclick={handleShowText}
-      />
-      {!buttonText && (
-        <div>
-          <Button text='Execute' onclick={() => onSubmit(textArea)} />
-        </div>
-      )}
-      {exampleValue && (
-        <textarea
-          disabled={buttonText}
-          rows={7}
-          cols={50}
-          value={textArea}
-          onChange={(e) => setTextArea(e.target.value)}
-        />
-      )}
-      {
-        <div>
-          <label>ID</label> <input type="number" />
-          <label>name</label> <input type="text" />
-        </div>
-      }
-
-      {showResponse && (
-        <>
-          <div>
-            <Text text='Request URL' />
-            <TextWithBackground text='http://localhost:3000/api/user' />
-          </div>
-          <div>
-            <Text text='Server response' />
-            <TextWithBackground jsonText={content} />
-          </div>
-          <div>
-            <Text text='Response headers' />
-            <TextWithBackground jsonText={responseHead} />
-          </div>
-        </>
-      )}
-    </div>
-  );
+  const renderMethod = () => {
+       switch (tag) {
+         case 'POST':
+           return <PostUser />;
+           case 'GET':
+             return <GetUser/>;
+         case 'DELETE':
+           return <DeleteUser/>;
+           case 'PUT':
+           return <PutUser />;
+       }
+  }
+  return <div>{renderMethod()}</div>;
 };
 
 export default AccordionContent;

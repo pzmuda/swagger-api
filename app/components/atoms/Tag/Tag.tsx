@@ -5,9 +5,8 @@ type props = {
 }
 
 const Tag = ({ text }: props) => {
-  return <div className={styles.tag}>{text}</div>;
+
+  return <div className={`${styles.tag} `}>{text}</div>;
 };
 
 export default Tag;
-{
-}

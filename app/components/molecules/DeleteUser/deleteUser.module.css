@@ -1,0 +1,12 @@
+.wrapper {
+  box-sizing: border-box;
+  /* margin-left: 12px; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper input {
+  width: 100px;
+}
+

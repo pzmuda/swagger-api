@@ -5,7 +5,7 @@ import styles from './bar.module.css';
 type props = {
   text?: string;
   buttonText?: string;
-  onclick?: React.MouseEvent<HTMLButtonElement>;
+  onclick?: any;
 };
 
 const Bar = ({ text, buttonText, onclick }: props) => {

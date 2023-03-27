@@ -37,7 +37,7 @@ const Accordion = ({ title, tag, children }: props) => {
         } ${color()}`}
         onClick={handleExpand}
       >
-        <Tag text={tag} />
+        <Tag text={tag}/>
         <Text text={title} />
       </button>
       {expanded && (
