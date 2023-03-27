@@ -1,0 +1,11 @@
+.tag {
+  border: 2px solid #61affe;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 60px;
+  background-color: #61affe;
+  color: white;
+}
